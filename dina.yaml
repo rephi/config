@@ -1,0 +1,26 @@
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    execute:
+      - invoke:
+          target-url: 'REPLACEIT$(request.path)$(request.search)'
+          tls-profile: 'client:Loopback-client'
+  properties:
+    runtime-url:
+      value: 'REPLACEIT'
+      description: ''
+      encoded: false
+    invoke-tls-profile:
+      value: 'client:Loopback-client'
+      description: ''
+      encoded: false
+  phase: realized
+x-ibm-endpoints:
+  - endpointUrl: 'https://api.us.apiconnect.ibmcloud.com/dfatkulbayanova-dev/sb'
+    description: Base Gateway API Endpoint
+    type:
+      - production
+      - development
