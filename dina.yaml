@@ -438,7 +438,7 @@ x-ibm-configuration:
   assembly:
     execute:
       - invoke:
-          target-url: 'REPLACEIT$(request.path)$(request.search)'
+          target-url: "REPLACEIT$(request.path)$(request.search)"
           tls-profile: 'client:Loopback-client'
   properties:
     runtime-url:
@@ -451,7 +451,7 @@ x-ibm-configuration:
       encoded: false
   phase: realized
 x-ibm-endpoints:
-  - endpointUrl: 'https://api.us.apiconnect.ibmcloud.com/dfatkulbayanova-dev/sb'
+  - endpointUrl: "https://api.us.apiconnect.ibmcloud.com/dfatkulbayanova-dev/sb"
     description: Base Gateway API Endpoint
     type:
       - production
