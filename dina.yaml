@@ -1,3 +1,435 @@
+paths:
+  /defaults:
+    post:
+      tags:
+        - default
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: default.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/default'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+    put:
+      tags:
+        - default
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: default.upsert__put_defaults
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/default'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+    patch:
+      tags:
+        - default
+      summary: Patch an existing model instance or insert a new one into the data source.
+      operationId: default.upsert__patch_defaults
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/default'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+    get:
+      tags:
+        - default
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: default.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({"something":"value"})'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/default'
+      deprecated: false
+  /defaults/replaceOrCreate:
+    post:
+      tags:
+        - default
+      summary: Replace an existing model instance or insert a new one into the data source.
+      operationId: default.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/default'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+  /defaults/upsertWithWhere:
+    post:
+      tags:
+        - default
+      summary: Update an existing model instance or insert a new one into the data source based on the where criteria.
+      operationId: default.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/default'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+  '/defaults/{id}/exists':
+    get:
+      tags:
+        - default
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'default.exists__get_defaults_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/defaults/{id}':
+    head:
+      tags:
+        - default
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'default.exists__head_defaults_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - default
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: default.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: 'Filter defining fields and include - must be a JSON-encoded string ({"something":"value"})'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+    delete:
+      tags:
+        - default
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: default.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - default
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'default.prototype.updateAttributes__put_defaults_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/default'
+        - name: id
+          in: path
+          description: default id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+    patch:
+      tags:
+        - default
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: 'default.prototype.updateAttributes__patch_defaults_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/default'
+        - name: id
+          in: path
+          description: default id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+  '/defaults/{id}/replace':
+    post:
+      tags:
+        - default
+      summary: Replace attributes for a model instance and persist it into the data source.
+      operationId: default.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/default'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+  /defaults/findOne:
+    get:
+      tags:
+        - default
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: default.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({"something":"value"})'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/default'
+      deprecated: false
+  /defaults/update:
+    post:
+      tags:
+        - default
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: default.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/default'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /defaults/count:
+    get:
+      tags:
+        - default
+      summary: Count instances of the model matched by where from the data source.
+      operationId: default.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+definitions:
+  default:
+    properties:
+      code:
+        type: string
+      datecrpromo:
+        type: string
+        format: date-time
+      datefin:
+        type: string
+        format: date-time
+      datestrt:
+        type: string
+        format: date-time
+      descry:
+        type: string
+      name:
+        type: string
+      oldprice:
+        type: number
+        format: double
+      promoprice:
+        type: number
+        format: double
+      qty:
+        type: number
+        format: double
+      weight:
+        type: number
+        format: double
+      id:
+        type: string
+    required:
+      - code
+      - datecrpromo
+      - datefin
+      - datestrt
+      - descry
+      - name
+      - oldprice
+      - promoprice
+      - qty
+      - weight
+    additionalProperties: false
+  x-any:
+    properties: {}
+basePath: /api
+swagger: '2.0'
+info:
+  x-ibm-name: dina
+  version: 1.0.0
+  title: dina
+schemes:
+  - https
+host: $(catalog.host)
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
 x-ibm-configuration:
   testable: true
   enforced: true
