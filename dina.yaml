@@ -413,7 +413,6 @@ info:
   title: dina
 schemes:
   - https
-host: $(catalog.host)
 consumes:
   - application/json
 produces:
@@ -438,11 +437,11 @@ x-ibm-configuration:
   assembly:
     execute:
       - invoke:
-          target-url: "REPLACEIT$(request.path)$(request.search)"
+          target-url: 'https://REPLACEIT$(request.path)$(request.search)'
           tls-profile: 'client:Loopback-client'
   properties:
     runtime-url:
-      value: 'REPLACEIT'
+      value: 'https://REPLACEIT'
       description: ''
       encoded: false
     invoke-tls-profile:
