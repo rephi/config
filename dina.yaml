@@ -362,27 +362,46 @@ paths:
 definitions:
   couch:
     properties:
+      code:
+        type: string
       name:
         type: string
-      price:
+      promoprice:
         type: number
         format: double
+      qty:
+        type: number
+        format: double
+      datestrt:
+        type: string
+        format: date-time
+      datefin:
+        type: string
+        format: date-time
+      active:
+        type: boolean
       id:
         type: string
     required:
+      - code
       - name
-      - price
+      - promoprice
+      - qty
+      - datestrt
+      - datefin
+      - active
     additionalProperties: false
   x-any:
     properties: {}
 basePath: /api
 swagger: '2.0'
 info:
-  x-ibm-name: couchtest
+  x-ibm-name: couch_api
   version: 1.0.0
-  title: couchtest
+  title: couch_api
 schemes:
   - https
+host: $(catalog.host)
 consumes:
   - application/json
 produces:
