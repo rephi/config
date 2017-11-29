@@ -439,7 +439,7 @@ x-ibm-configuration:
       encoded: false
   phase: realized
 x-ibm-endpoints:
-  - endpointUrl: "https://api.us.apiconnect.ibmcloud.com/dfatkulbayanova-dev/sb"
+  - endpointUrl: "https://api.us.apiconnect.ibmcloud.com/sorinfa2-dev/sb"
     description: Base Gateway API Endpoint
     type:
       - production
